@@ -1,6 +1,7 @@
 # producton_system
 Simple Production System in less than 150 lines of code (UNFINISHED).
 
+
 Using : SWI-Prolog and logtalk OOP
 
 ```prolog
@@ -22,15 +23,19 @@ For built-in help, use ?- help(Topic). or ?- apropos(Word).
 % (0 warnings)
 true.
 
+% simple rules to sum two numbers
 ?- [summing].
 true.
 
+% GOAL buffer content
 ?- g::buf(G).
 G = _506{goal:init}.
 
+%WORK buffer content
 ?- w::buf(W).
 W = _506{carry:0, col:1, num1:[1, 3], num2:[4, 9]}.
 
+% run the system  for four steps
 ?- rules::run(env,4).
 13 + 49 = 62
 true.
