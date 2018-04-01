@@ -3,7 +3,7 @@
 Simple Production System in less than 150 lines of code (UNFINISHED).
 Uses Reinforcment learning to score the RULES.
 
-Using : SWI-Prolog and logtalk OOP
+### Using : SWI-Prolog and logtalk OOP
 
 
 ```prolog
@@ -122,6 +122,5 @@ act(3) :-
 
 true.
 
-?- 
 
 ```
