@@ -1,4 +1,4 @@
-#Producton System
+# Producton System
 
 Simple Production System in less than 150 lines of code (UNFINISHED).
 Uses Reinforcment learning to score the RULES.
