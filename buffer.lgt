@@ -1,11 +1,5 @@
 :- object(buffer, instantiates(buffer)).
 
-	:- initialization(init).
-	:- private(init/0).
-
-	:- public test/0.
-	test :- self(S), this(T), sender(X), writeln(S), writeln(T), writeln(X).
-
 	:- public(buf/1).
 	:- dynamic(buf/1).
 	buf(_{}).

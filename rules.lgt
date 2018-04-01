@@ -31,14 +31,13 @@ rule(R) :- ==>(C,A) = R, rules::add(C,A).
 	set_lix(Ix) :- ::retractall(last_ix(_)), ::assertz(last_ix(Ix)).
 
 
-	:- public [add/2, run/0, run/1, run/2, updateq/2, uq/2].
-	:- public [max_elem/3, check_cond/2, checkx/1].
+	:- public [add/2, run/0, run/1, run/2, updateq/2].
+	:- public [max_elem/3, check_cond/2].
 
 	% add new rule to the rule-db : cond(IF,Q,Ix) + act(Ix) :- THEN.
 %	add(IF, THEN) :- new_uid(U), {assertz(cond(IF, 0, U))}, Rule =.. [ act, U, THEN ], {assertz(Rule)}.
 	add(IF, THEN) :- new_uid(U), {assertz(cond(IF, 0, U))}, {assertz(act(U) :- THEN)}.
 
-	uq(IF,  Plus) :- {clause(cond(IF, Q, Ix), true)}, NQ is Q + Plus, { retractall(cond(IF,Q,Ix)), assertz(cond(IF,NQ,Ix)) }.
 	%update Q-value of a rule
 	updateq(Ix, NewQ) :- {clause(cond(IF, _Q, Ix), true)}, { retractall(cond(_,_,Ix)), assertz(cond(IF,NewQ,Ix)) }.
 
